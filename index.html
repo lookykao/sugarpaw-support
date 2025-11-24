@@ -1,115 +1,242 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SugarPaw 支援頁 | Support</title>
-  <style>
-    body {
-      background: #f8f5ef;
-      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
-      margin: 0;
-      padding: 20px;
-      color: #4a2d20;
-      text-align: center;
-    }
-    h1 { font-size: 28px; margin-top: 10px; }
-    h2 { margin-top: 40px; }
-    .card {
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      max-width: 600px;
-      margin: 20px auto;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    img.logo {
-      width: 160px;
-      margin: 20px auto;
-      display: block;
-    }
-    .lang-btn {
-      margin: 6px;
-      padding: 6px 12px;
-      border-radius: 8px;
-      border: none;
-      background: #f3d49b;
-      cursor: pointer;
-    }
-  </style>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SugarPaw Support</title>
 
-<body>
+    <!-- ✅ favicon（可選，但建議放） -->
+    <link rel="icon" href="./assets/favicon-1921.png" />
 
-  <img class="logo" src="guardian_cat_1_0.png">
+    <style>
+      :root {
+        --bg: #fbf7ef;
+        --card: #ffffff;
+        --text: #3b2c23;
+        --muted: #6b5b52;
+        --brand: #f59e0b;
+        --accent: #ff6b6b;
+        --radius: 18px;
+      }
 
-  <h1 id="title">SugarPaw 支援頁</h1>
-  <p id="subtitle">若您在使用中遇到任何問題，我們會盡快協助您。</p>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Noto Sans TC", "Noto Sans JP", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
 
-  <div>
-    <button class="lang-btn" onclick="setLang('zh')">繁中</button>
-    <button class="lang-btn" onclick="setLang('en')">English</button>
-    <button class="lang-btn" onclick="setLang('ja')">日本語</button>
-  </div>
+      .wrap {
+        max-width: 880px;
+        padding: 28px 18px 60px;
+        margin: 0 auto;
+        text-align: center;
+      }
 
-  <div class="card">
-    <h2 id="sec1">📩 聯絡我們</h2>
-    <p id="contact">
-      如需協助，請來信：  
-      <br><b>looky.kao@gmail.com</b>
-    </p>
-  </div>
+      /* ✅ 頁首圖：用正確相對路徑 */
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-top: 8px;
+        margin-bottom: 12px;
+      }
+      .hero img {
+        width: 96px;
+        height: 96px;
+        object-fit: contain;
+        filter: drop-shadow(0 4px 10px rgba(0,0,0,.06));
+      }
 
-  <div class="card">
-    <h2 id="sec2">🔒 隱私權</h2>
-    <p id="privacy">
-      SugarPaw 不會上傳您的個人醫療資料。
-      所有紀錄皆儲存在您自己的帳號與私人資料庫中。
-    </p>
-  </div>
+      h1 {
+        margin: 8px 0 6px;
+        font-size: 32px;
+        font-weight: 800;
+        letter-spacing: .5px;
+      }
+      .subtitle {
+        color: var(--muted);
+        font-size: 15px;
+        margin-bottom: 14px;
+      }
 
-  <div class="card">
-    <h2 id="sec3">💛 關於 SugarPaw</h2>
-    <p id="about">
-      SugarPaw 是為慢性病貓咪照護者所打造的紀錄工具。
-      包含血糖、餵食、用藥、症狀與情緒追蹤。
-    </p>
-  </div>
+      .lang-switch {
+        display: inline-flex;
+        gap: 8px;
+        margin: 8px 0 22px;
+        padding: 6px;
+        background: rgba(255,255,255,.65);
+        border-radius: 999px;
+      }
+      .lang-btn {
+        border: 0;
+        padding: 8px 14px;
+        border-radius: 999px;
+        cursor: pointer;
+        background: #f3e3c1;
+        color: #3b2c23;
+        font-weight: 700;
+        font-size: 14px;
+        transition: .15s ease;
+      }
+      .lang-btn.active {
+        background: white;
+        outline: 2px solid #2f6fed;
+      }
 
-<script>
-function setLang(lang) {
-  if (lang === 'zh') {
-    title.innerText = "SugarPaw 支援頁";
-    subtitle.innerText = "若您在使用中遇到任何問題，我們會盡快協助您。";
-    sec1.innerText = "📩 聯絡我們";
-    contact.innerHTML = "如需協助，請來信：<br><b>looky.kao@gmail.com</b>";
-    sec2.innerText = "🔒 隱私權";
-    privacy.innerText = "SugarPaw 不會上傳您的個人醫療資料。所有紀錄皆儲存在您自己的帳號與私人資料庫中。";
-    sec3.innerText = "💛 關於 SugarPaw";
-    about.innerText = "SugarPaw 是為慢性病貓咪照護者所打造的紀錄工具。包含血糖、餵食、用藥、症狀與情緒追蹤。";
-  }
-  if (lang === 'en') {
-    title.innerText = "SugarPaw Support";
-    subtitle.innerText = "If you encounter issues, we are here to help.";
-    sec1.innerText = "📩 Contact Us";
-    contact.innerHTML = "Email support:<br><b>looky.kaop@gmail.com</b>";
-    sec2.innerText = "🔒 Privacy";
-    privacy.innerText = "SugarPaw never uploads your medical data. Records are stored securely in your own account.";
-    sec3.innerText = "💛 About SugarPaw";
-    about.innerText = "SugarPaw helps caregivers track glucose, feeding, medication, symptoms, and emotional notes.";
-  }
-  if (lang === 'ja') {
-    title.innerText = "SugarPaw サポートページ";
-    subtitle.innerText = "ご不明な点があれば、お気軽にご連絡ください。";
-    sec1.innerText = "📩 お問い合わせ";
-    contact.innerHTML = "サポートメール：<br><b>looky.kao@gmail.com</b>";
-    sec2.innerText = "🔒 プライバシー";
-    privacy.innerText = "SugarPaw は医療データをアップロードしません。すべての記録はご自身のアカウントに安全に保存されます。";
-    sec3.innerText = "💛 SugarPaw について";
-    about.innerText = "SugarPaw は慢性疾患を持つ猫のケア記録アプリです。血糖、食事、投薬、症状、日々のメモを管理できます。";
-  }
-}
-</script>
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 20px 18px;
+        margin: 14px auto;
+        box-shadow: 0 10px 30px rgba(30, 20, 10, .06);
+        text-align: center;
+        max-width: 760px;
+      }
+      .card h2 {
+        margin: 0 0 8px;
+        font-size: 20px;
+        font-weight: 800;
+      }
+
+      /* ✅ 文字區：統一自然換行，不手動 <br> */
+      .card p {
+        margin: 0 auto;
+        font-size: 15.5px;
+        line-height: 1.8;
+        color: var(--text);
+        max-width: 36em; /* 中文舒服的寬度 */
+        white-space: normal;
+      }
+
+      /* ✅ 日文專用排版：更自然的換行與行距 */
+      .lang-ja .card p {
+        max-width: 32em;       /* 日文不要太寬 */
+        line-height: 1.95;     /* 日文行距稍大更順 */
+        line-break: strict;
+        word-break: keep-all; /* 避免亂拆英數 */
+      }
+
+      .muted { color: var(--muted); }
+
+      .footer {
+        margin-top: 18px;
+        font-size: 12.5px;
+        color: var(--muted);
+      }
+      a { color: #2f6fed; text-decoration: none; font-weight: 700; }
+      a:hover { text-decoration: underline; }
+    </style>
+  </head>
+
+  <body>
+    <main class="wrap" id="app">
+
+      <header class="hero">
+        <!-- ✅ 這裡就是破圖原因：請確保 assets 裡有此檔 -->
+        <img src="./assets/guardian_cat_1_0.png" alt="SugarPaw Guardian" />
+        <h1 id="title">SugarPaw 支援頁</h1>
+        <div class="subtitle" id="subtitle">
+          如果你有任何問題，歡迎隨時聯絡我。
+        </div>
+
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="zh">繁中</button>
+          <button class="lang-btn" data-lang="en">English</button>
+          <button class="lang-btn" data-lang="ja">日本語</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2 id="contactTitle">📮 聯絡我們</h2>
+        <p id="contactText">
+          支援信箱：<strong>looky.kao@gmail.com</strong>
+        </p>
+      </section>
+
+      <section class="card">
+        <h2 id="privacyTitle">🔒 隱私</h2>
+        <p id="privacyText">
+          SugarPaw 不會將你的醫療或照護資料上傳到公開網路。所有記錄只會安全保存在你自己的帳號中。
+        </p>
+      </section>
+
+      <section class="card">
+        <h2 id="aboutTitle">💛 關於 SugarPaw</h2>
+        <p id="aboutText">
+          SugarPaw 是為慢性病貓咪設計的照護紀錄 app，協助你追蹤血糖、飲食、體重、用藥、症狀與日常心情筆記，並可匯出給獸醫參考。
+        </p>
+      </section>
+
+      <div class="footer" id="footer">
+        © 2025 SugarPaw / lookykao
+      </div>
+    </main>
+
+    <script>
+      const i18n = {
+        zh: {
+          title: "SugarPaw 支援頁",
+          subtitle: "如果你有任何問題，歡迎隨時聯絡我。",
+          contactTitle: "📮 聯絡我們",
+          contactText: "支援信箱：looky.kao@gmail.com",
+          privacyTitle: "🔒 隱私",
+          privacyText: "SugarPaw 不會將你的醫療或照護資料上傳到公開網路。所有記錄只會安全保存在你自己的帳號中。",
+          aboutTitle: "💛 關於 SugarPaw",
+          aboutText: "SugarPaw 是為慢性病貓咪設計的照護紀錄 app，協助你追蹤血糖、飲食、體重、用藥、症狀與日常心情筆記，並可匯出給獸醫參考。",
+          footer: "© 2025 SugarPaw / lookykao"
+        },
+        en: {
+          title: "SugarPaw Support",
+          subtitle: "If you run into any issues, feel free to contact us anytime.",
+          contactTitle: "📮 Contact Us",
+          contactText: "Email support: looky.kao@gmail.com",
+          privacyTitle: "🔒 Privacy",
+          privacyText: "SugarPaw never uploads your medical or care data to the public internet. All records are stored securely in your own account.",
+          aboutTitle: "💛 About SugarPaw",
+          aboutText: "SugarPaw is a care-tracking app for cats with chronic conditions. Track glucose, meals, weight, medication, symptoms, and daily notes, and export reports for your vet.",
+          footer: "© 2025 SugarPaw / lookykao"
+        },
+        ja: {
+          title: "SugarPaw サポートページ",
+          subtitle: "ご不明な点がありましたら、お気軽にご連絡ください。",
+          contactTitle: "📮 お問い合わせ",
+          contactText: "サポートメール：looky.kao@gmail.com",
+          privacyTitle: "🔒 プライバシー",
+          privacyText: "SugarPaw は医療・ケアデータを公開ネットワークへ送信しません。すべての記録はご自身のアカウント内に安全に保存されます。",
+          aboutTitle: "💛 SugarPaw について",
+          aboutText: "SugarPaw は慢性疾患のある猫のためのケア記録アプリです。血糖、食事、体重、投薬、症状、日々のメモをまとめて管理し、獣医師に共有するためのレポートとして書き出すこともできます。",
+          footer: "© 2025 SugarPaw / lookykao"
+        }
+      };
+
+      const app = document.getElementById("app");
+      const btns = document.querySelectorAll(".lang-btn");
+
+      function setLang(lang) {
+        // lang class for ja layout
+        app.classList.toggle("lang-ja", lang === "ja");
+
+        const t = i18n[lang];
+        document.getElementById("title").textContent = t.title;
+        document.getElementById("subtitle").textContent = t.subtitle;
+        document.getElementById("contactTitle").textContent = t.contactTitle;
+        document.getElementById("contactText").innerHTML = t.contactText;
+        document.getElementById("privacyTitle").textContent = t.privacyTitle;
+        document.getElementById("privacyText").textContent = t.privacyText;
+        document.getElementById("aboutTitle").textContent = t.aboutTitle;
+        document.getElementById("aboutText").textContent = t.aboutText;
+        document.getElementById("footer").textContent = t.footer;
+
+        btns.forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
+      }
+
+      btns.forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+    </script>
+  </body>
+</html>
 
 </body>
 </html>
