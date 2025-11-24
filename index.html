@@ -12,6 +12,12 @@
   <link rel="icon" href="assets/favicon-192.png" />
   <link rel="apple-touch-icon" href="assets/favicon-192.png" />
 
+  <!-- ✅ 如果你想換成更一致的字體，可以在這裡加 Google Font
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  -->
+
   <style>
     :root{
       --bg: #fbf6ee;
@@ -33,7 +39,14 @@
       margin:0;
       background: var(--bg);
       color: var(--text);
-      font-family: system-ui, -apple-system, "Noto Sans TC", "PingFang TC", "Hiragino Sans", "Segoe UI", sans-serif;
+
+      /* ✅ 字體就是改這行（你問的地方）
+         想更像 App，就把 system-ui 換成你喜歡的字體即可
+         例如：
+         font-family: "Noto Sans TC", system-ui, -apple-system, sans-serif;
+      */
+      font-family: system-ui, -apple-system, "Noto Sans TC", "PingFang TC", "Hiragino Sans",
+                   "Segoe UI", sans-serif;
     }
 
     .wrap{
@@ -133,16 +146,22 @@
       line-height:1.8;
     }
 
-    footer{
-      margin-top: 26px;
-      color: var(--muted);
+    /* ✅ Footer 改成 App 一致 */
+    .footer{
+      margin: 36px 0 18px;
+      text-align: center;
+      color: #6b5a4d;
       font-size: 14px;
+      line-height: 1.6;
+      opacity: 0.9;
+      letter-spacing: 0.2px;
     }
+    .footer-line{ margin-top: 4px; }
 
-    /* ✅ 修日文斷行：避免硬斷、讓標點不掉到新行 */
-    .jp{
-      word-break: keep-all;     /* 盡量不停在單字中間 */
-      line-break: strict;       /* 日文更自然的換行規則 */
+    /* ✅ 只在日文模式生效的斷行規則 */
+    body.jp{
+      word-break: keep-all;
+      line-break: strict;
       letter-spacing: .2px;
     }
 
@@ -158,7 +177,7 @@
 <body>
   <div class="wrap">
 
-    <!-- ✅ 上方品牌破圖修正：檔名以你 assets 為準 -->
+    <!-- ✅ 上方品牌圖 -->
     <div class="brand">
       <img src="assets/guardian_cat_0_0.png" alt="SugarPaw Guardian" />
       <div class="muted" style="font-weight:700; letter-spacing:.4px;">SugarPaw Guardian</div>
@@ -233,10 +252,11 @@
       </div>
     </section>
 
-  <footer class="footer">
-  <div class="footer-line">© 2025 SugarPaw　Tâi-uân tsè-tsō 臺灣製造</div>
-  <div class="footer-line">Made with ❤️ and 🐾</div>
-</footer>
+    <!-- ✅ Footer（App 版） -->
+    <footer class="footer">
+      <div class="footer-line">© 2025 SugarPaw　Tâi-uân tsè-tsō 臺灣製造</div>
+      <div class="footer-line">Made with ❤️ and 🐾</div>
+    </footer>
 
   </div>
 
@@ -259,7 +279,7 @@
         faq3_q: "Q3. 我的資料會被公開嗎？",
         faq3_a: "不會。SugarPaw 僅在你的帳號中保存資料，並使用資料庫權限規則保護，其他人無法看到你的紀錄。",
         faq4_q: "Q4. 可以匯出給獸醫看嗎？",
-        faq4_a: "可以。在血糖曲線、日記、醫療紀錄等頁面可匯出 PNG / PDF，方便傳給獸醫或備存。"
+        faq4_a: "可以。在血糖曲線、日記、醫療記錄等頁面可匯出 PNG / PDF，方便傳給獸醫或備存。"
       },
       en: {
         title: "SugarPaw Support",
@@ -311,6 +331,8 @@
         n.textContent = i18n[lang][key] || i18n.zh[key] || "";
       });
       document.documentElement.lang = lang === "zh" ? "zh-Hant" : lang;
+
+      // ✅ 日文模式才套日文換行規則
       document.body.classList.toggle("jp", lang === "ja");
     }
 
@@ -318,8 +340,5 @@
     setLang("zh");
   </script>
 </body>
-</html>
-
-  </body>
 </html>
 
