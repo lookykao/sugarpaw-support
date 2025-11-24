@@ -1,277 +1,321 @@
 <!doctype html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SugarPaw Support</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SugarPaw Support</title>
 
-    <!-- Favicon（可留你上傳的那張） -->
-    <link rel="icon" href="assets/favicon-192.png" />
+  <!-- 基本 SEO -->
+  <meta name="description" content="SugarPaw support and FAQ page." />
 
-    <style>
-      :root {
-        --bg: #fff8f3;
-        --card: #ffffff;
-        --ink: #3a2a1f;
-        --muted: #6b5a4a;
-        --accent: #f59e0b;
-        --accent-soft: #fde9c2;
-        --radius: 20px;
-        --shadow: 0 8px 24px rgba(0,0,0,.06);
-      }
+  <!-- Favicon（用你 assets 裡的) -->
+  <link rel="icon" href="assets/favicon-192.png" />
+  <link rel="apple-touch-icon" href="assets/favicon-192.png" />
 
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, "Noto Sans TC", "PingFang TC", sans-serif;
-        background: var(--bg);
-        color: var(--ink);
-      }
+  <style>
+    :root{
+      --bg: #fbf6ee;
+      --card: #ffffff;
+      --text: #3a2f28;
+      --muted: #6b5b52;
+      --accent: #f3d49b;
+      --accent-strong: #f59e0b;
+      --blue: #2b6fff;
+      --radius: 22px;
+      --shadow: 0 8px 24px rgba(0,0,0,.08);
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-      .wrap {
-        max-width: 760px;
-        margin: 0 auto;
-        padding: 28px 18px 60px;
-        text-align: center;
-      }
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Noto Sans TC", "PingFang TC", "Hiragino Sans", "Segoe UI", sans-serif;
+    }
 
-      /* Header */
-      .logo {
-        width: 84px;
-        height: 84px;
-        object-fit: contain;
-        margin: 6px auto 8px;
-        display: block;
-      }
+    .wrap{
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 44px 20px 64px;
+      text-align:center;
+    }
 
-      h1 {
-        font-size: 30px;
-        margin: 8px 0 6px;
-        font-weight: 800;
-        letter-spacing: .5px;
-      }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+      margin-bottom: 6px;
+    }
+    .brand img{
+      width:72px; height:72px;
+      object-fit:contain;
+    }
+    h1{
+      margin: 8px 0 0;
+      font-size: 34px;
+      letter-spacing:.5px;
+    }
+    .subtitle{
+      margin: 8px 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
 
-      .subtitle {
-        color: var(--muted);
-        font-size: 15px;
-        margin-bottom: 14px;
-      }
+    /* 語言切換 */
+    .lang-switch{
+      display:inline-flex;
+      background:#f1e6d3;
+      padding:6px;
+      border-radius:999px;
+      gap:6px;
+      margin: 8px 0 26px;
+    }
+    .lang-btn{
+      border:0;
+      background:transparent;
+      padding:8px 14px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:600;
+      color:#3a2f28;
+      font-size:14px;
+      transition: all .15s ease;
+    }
+    .lang-btn.active{
+      background:#fff;
+      box-shadow: 0 0 0 2px var(--blue) inset;
+    }
 
-      /* Lang buttons */
-      .langbar {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        margin: 12px 0 22px;
-        flex-wrap: wrap;
-      }
-      .langbtn {
-        border: 2px solid transparent;
-        background: var(--accent-soft);
-        color: var(--ink);
-        padding: 8px 14px;
-        border-radius: 999px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: .15s;
-        font-size: 14px;
-      }
-      .langbtn.active {
-        border-color: #2b6cff;
-        background: #fff;
-        box-shadow: 0 2px 8px rgba(43,108,255,.15);
-      }
+    /* 卡片 */
+    .card{
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px 22px;
+      margin: 16px auto;
+      text-align:center;
+    }
+    .card h2{
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+    .card p{
+      margin:0;
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+    .muted{ color: var(--muted); }
 
-      /* Cards */
-      .card {
-        background: var(--card);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        padding: 22px 18px;
-        margin: 16px auto;
-        text-align: center;
-      }
+    /* FAQ */
+    .faq{
+      text-align:left;
+      margin-top: 6px;
+    }
+    .faq-item{
+      background: #fffaf0;
+      border-radius: 16px;
+      padding: 14px 14px;
+      margin: 10px 0;
+      border: 1px solid #f3ead9;
+    }
+    .faq-q{
+      font-weight:700;
+      margin-bottom:6px;
+    }
+    .faq-a{
+      color: var(--text);
+      line-height:1.8;
+    }
 
-      .card h2 {
-        margin: 0 0 10px;
-        font-size: 20px;
-        font-weight: 800;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-      }
-      .card p {
-        margin: 0;
-        font-size: 15px;
-        line-height: 1.7;
-        color: var(--ink);
-        white-space: pre-line;
-      }
+    footer{
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-      .email {
-        font-weight: 800;
-        font-size: 16px;
-        letter-spacing: .2px;
-      }
+    /* ✅ 修日文斷行：避免硬斷、讓標點不掉到新行 */
+    .jp{
+      word-break: keep-all;     /* 盡量不停在單字中間 */
+      line-break: strict;       /* 日文更自然的換行規則 */
+      letter-spacing: .2px;
+    }
 
-      /* Japanese typography fix */
-      .lang-ja p {
-        line-height: 1.9;
-        letter-spacing: .2px;
-        word-break: keep-all;      /* 不亂切英文/數字 */
-        line-break: strict;        /* 日文自然換行 */
-        overflow-wrap: break-word; /* 遇到超長字才換 */
-      }
+    /* 小螢幕 */
+    @media (max-width: 480px){
+      h1{ font-size: 28px; }
+      .card{ padding: 22px 16px; }
+      .card p{ font-size: 15px; }
+    }
+  </style>
+</head>
 
-      /* small footer */
-      footer {
-        margin-top: 28px;
-        color: var(--muted);
-        font-size: 12px;
-      }
+<body>
+  <div class="wrap">
 
-      /* little omamori */
-      .omamori {
-        width: 72px;
-        opacity: .9;
-        margin: 4px auto 0;
-        display: block;
-      }
-    </style>
-  </head>
+    <!-- ✅ 上方品牌破圖修正：檔名以你 assets 為準 -->
+    <div class="brand">
+      <img src="assets/guardian_cat_0_0.png" alt="SugarPaw Guardian" />
+      <div class="muted" style="font-weight:700; letter-spacing:.4px;">SugarPaw Guardian</div>
+    </div>
 
-  <body>
-    <main class="wrap">
-      <!-- ✅ 修破圖：用 assets/icon-512x512.png -->
-      <img class="logo" src="assets/icon-512x512.png" alt="SugarPaw logo" />
+    <h1 data-i18n="title">SugarPaw 支援頁</h1>
+    <div class="subtitle" data-i18n="subtitle">
+      如果你有任何問題，歡迎隨時聯絡我。
+    </div>
 
-      <h1 id="title">SugarPaw 支援頁</h1>
-      <div class="subtitle" id="subtitle">如果你遇到任何問題，歡迎來信，我們會盡快協助。</div>
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="zh">繁中</button>
+      <button class="lang-btn" data-lang="en">English</button>
+      <button class="lang-btn" data-lang="ja">日本語</button>
+    </div>
 
-      <div class="langbar">
-        <button class="langbtn active" data-lang="zh">繁中</button>
-        <button class="langbtn" data-lang="en">English</button>
-        <button class="langbtn" data-lang="ja">日本語</button>
+    <!-- Contact -->
+    <section class="card">
+      <h2 data-i18n="contactTitle">📮 聯絡我們</h2>
+      <p>
+        <span data-i18n="contactLabel">支援信箱：</span>
+        <strong>looky.kao@gmail.com</strong>
+      </p>
+    </section>
+
+    <!-- Privacy -->
+    <section class="card">
+      <h2 data-i18n="privacyTitle">🔒 隱私</h2>
+      <p data-i18n="privacyText">
+        SugarPaw 不會將你的醫療或照護資料上傳到公開網路。所有記錄只會安全保存在你自己的帳號中。
+      </p>
+    </section>
+
+    <!-- About -->
+    <section class="card">
+      <h2 data-i18n="aboutTitle">💛 關於 SugarPaw</h2>
+      <p data-i18n="aboutText">
+        SugarPaw 是為慢性病貓咪設計的照護紀錄 app，協助你追蹤血糖、飲食、體重、用藥、症狀與日常心情筆記，並可匯出給獸醫參考。
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="card faq">
+      <h2 data-i18n="faqTitle">❓ 常見問題 / 使い方</h2>
+
+      <div class="faq-item">
+        <div class="faq-q" data-i18n="faq1_q">Q1. SugarPaw 可以記錄哪些內容？</div>
+        <div class="faq-a" data-i18n="faq1_a">
+          你可以記錄血糖、胰島素、飲食與飲水、體重、醫療檢驗、異常觀察（嘔吐、軟便等）與照護日記。
+        </div>
       </div>
 
-      <section class="card" id="card-contact">
-        <h2>📮 <span id="contact-title">聯絡我們</span></h2>
-        <p>
-          <span id="contact-label">支援信箱：</span>
-          <span class="email">looky.kao@gmail.com</span>
-        </p>
-      </section>
+      <div class="faq-item">
+        <div class="faq-q" data-i18n="faq2_q">Q2. 如何邀請家人或看護一起共照？</div>
+        <div class="faq-a" data-i18n="faq2_a">
+          到「共同照顧」頁面生成邀請連結或邀請碼，對方登入後點開即可加入同一隻貓的共照。
+        </div>
+      </div>
 
-      <section class="card" id="card-privacy">
-        <h2>🔐 <span id="privacy-title">隱私說明</span></h2>
-        <p id="privacy-text">
-SugarPaw 不會上傳你的醫療或照護資料。
-所有紀錄都只會儲存在你自己的帳號中，
-並依據權限安全存取。
-        </p>
-      </section>
+      <div class="faq-item">
+        <div class="faq-q" data-i18n="faq3_q">Q3. 我的資料會被公開嗎？</div>
+        <div class="faq-a" data-i18n="faq3_a">
+          不會。SugarPaw 僅在你的帳號中保存資料，並使用資料庫權限規則保護，其他人無法看到你的紀錄。
+        </div>
+      </div>
 
-      <section class="card" id="card-about">
-        <h2>💛 <span id="about-title">關於 SugarPaw</span></h2>
-        <p id="about-text">
-SugarPaw 是慢性病貓咪的照護記錄 App，
-可追蹤血糖、餵食、投藥、體重、症狀與日記，
-幫助照護者更安心、更有方向。
-        </p>
-        <img class="omamori" src="assets/omamori01.png" alt="omamori" />
-      </section>
+      <div class="faq-item">
+        <div class="faq-q" data-i18n="faq4_q">Q4. 可以匯出給獸醫看嗎？</div>
+        <div class="faq-a" data-i18n="faq4_a">
+          可以。在血糖曲線、日記、醫療紀錄等頁面可匯出 PNG / PDF，方便傳給獸醫或備存。
+        </div>
+      </div>
+    </section>
 
-      <footer>© SugarPaw / lookykao</footer>
-    </main>
+    <footer>© 2025 SugarPaw / lookykao</footer>
+  </div>
 
-    <script>
-      const COPY = {
-        zh: {
-          pageTitle: "SugarPaw 支援頁",
-          subtitle: "如果你遇到任何問題，歡迎來信，我們會盡快協助。",
-          contactTitle: "聯絡我們",
-          contactLabel: "支援信箱：",
-          privacyTitle: "隱私說明",
-          privacyText:
-`SugarPaw 不會上傳你的醫療或照護資料。
-所有紀錄都只會儲存在你自己的帳號中，
-並依據權限安全存取。`,
-          aboutTitle: "關於 SugarPaw",
-          aboutText:
-`SugarPaw 是慢性病貓咪的照護記錄 App，
-可追蹤血糖、餵食、投藥、體重、症狀與日記，
-幫助照護者更安心、更有方向。`,
-        },
-        en: {
-          pageTitle: "SugarPaw Support",
-          subtitle: "If you encounter any issues, feel free to contact us anytime.",
-          contactTitle: "Contact Us",
-          contactLabel: "Email support:",
-          privacyTitle: "Privacy",
-          privacyText:
-`SugarPaw never uploads your medical or care data.
-All records are stored securely in your own account
-and accessed only with your permission.`,
-          aboutTitle: "About SugarPaw",
-          aboutText:
-`SugarPaw is a care-tracking app for cats with chronic conditions.
-Track glucose, meals, medication, weight, symptoms, and daily notes
-to make caregiving clearer and more reassuring.`,
-        },
-        ja: {
-          pageTitle: "SugarPaw サポートページ",
-          subtitle: "お困りのことがあれば、いつでもお気軽にご連絡ください。",
-          contactTitle: "お問い合わせ",
-          contactLabel: "サポートメール：",
-          privacyTitle: "プライバシー",
-          privacyText:
-`SugarPaw は医療・ケアデータを外部にアップロードしません。
-記録はご自身のアカウントに安全に保存され、
-権限に基づいて利用されます。`,
-          aboutTitle: "SugarPaw について",
-          aboutText:
-`SugarPaw は慢性疾患のある猫のためのケア記録アプリです。
-血糖、食事、投薬、体重、症状、日々のメモをまとめて管理し、
-飼い主さんの安心と判断をサポートします。`,
-        }
-      };
-
-      const els = {
-        title: document.getElementById("title"),
-        subtitle: document.getElementById("subtitle"),
-        contactTitle: document.getElementById("contact-title"),
-        contactLabel: document.getElementById("contact-label"),
-        privacyTitle: document.getElementById("privacy-title"),
-        privacyText: document.getElementById("privacy-text"),
-        aboutTitle: document.getElementById("about-title"),
-        aboutText: document.getElementById("about-text"),
-        wrap: document.querySelector(".wrap"),
-      };
-
-      function setLang(lang) {
-        const c = COPY[lang];
-        els.title.textContent = c.pageTitle;
-        els.subtitle.textContent = c.subtitle;
-        els.contactTitle.textContent = c.contactTitle;
-        els.contactLabel.textContent = c.contactLabel;
-        els.privacyTitle.textContent = c.privacyTitle;
-        els.privacyText.textContent = c.privacyText;
-        els.aboutTitle.textContent = c.aboutTitle;
-        els.aboutText.textContent = c.aboutText;
-
-        // typography class
-        els.wrap.classList.remove("lang-ja");
-        if (lang === "ja") els.wrap.classList.add("lang-ja");
-
-        document.querySelectorAll(".langbtn").forEach(b => {
-          b.classList.toggle("active", b.dataset.lang === lang);
-        });
+  <script>
+    const i18n = {
+      zh: {
+        title: "SugarPaw 支援頁",
+        subtitle: "如果你有任何問題，歡迎隨時聯絡我。",
+        contactTitle: "📮 聯絡我們",
+        contactLabel: "支援信箱：",
+        privacyTitle: "🔒 隱私",
+        privacyText: "SugarPaw 不會將你的醫療或照護資料上傳到公開網路。所有記錄只會安全保存在你自己的帳號中。",
+        aboutTitle: "💛 關於 SugarPaw",
+        aboutText: "SugarPaw 是為慢性病貓咪設計的照護紀錄 app，協助你追蹤血糖、飲食、體重、用藥、症狀與日常心情筆記，並可匯出給獸醫參考。",
+        faqTitle: "❓ 常見問題 / 使い方",
+        faq1_q: "Q1. SugarPaw 可以記錄哪些內容？",
+        faq1_a: "你可以記錄血糖、胰島素、飲食與飲水、體重、醫療檢驗、異常觀察（嘔吐、軟便等）與照護日記。",
+        faq2_q: "Q2. 如何邀請家人或看護一起共照？",
+        faq2_a: "到「共同照顧」頁面生成邀請連結或邀請碼，對方登入後點開即可加入同一隻貓的共照。",
+        faq3_q: "Q3. 我的資料會被公開嗎？",
+        faq3_a: "不會。SugarPaw 僅在你的帳號中保存資料，並使用資料庫權限規則保護，其他人無法看到你的紀錄。",
+        faq4_q: "Q4. 可以匯出給獸醫看嗎？",
+        faq4_a: "可以。在血糖曲線、日記、醫療紀錄等頁面可匯出 PNG / PDF，方便傳給獸醫或備存。"
+      },
+      en: {
+        title: "SugarPaw Support",
+        subtitle: "If you encounter any issues, feel free to contact us anytime.",
+        contactTitle: "📮 Contact Us",
+        contactLabel: "Email support:",
+        privacyTitle: "🔒 Privacy",
+        privacyText: "SugarPaw never uploads your medical or care data to public networks. All records are stored securely within your own account.",
+        aboutTitle: "💛 About SugarPaw",
+        aboutText: "SugarPaw is a care-tracking app for cats with chronic conditions. It helps you log glucose, meals, weight, medication, symptoms, and daily notes, and export reports for your vet.",
+        faqTitle: "❓ FAQ / How to Use",
+        faq1_q: "Q1. What can I track in SugarPaw?",
+        faq1_a: "You can log glucose, insulin, meals & water intake, weight, lab results, abnormal events (vomiting, diarrhea, etc.), and care diaries.",
+        faq2_q: "Q2. How do I invite another caregiver?",
+        faq2_a: "Go to the “Caregivers” page and generate an invite link or code. The caregiver can join after signing in.",
+        faq3_q: "Q3. Will my data be public?",
+        faq3_a: "No. Your data is private to your account and protected by database security rules.",
+        faq4_q: "Q4. Can I export data for my vet?",
+        faq4_a: "Yes. You can export PNG/PDF from charts, diaries, and medical records for easy sharing."
+      },
+      ja: {
+        title: "SugarPaw サポートページ",
+        subtitle: "ご不明な点があれば、いつでもお気軽にご連絡ください。",
+        contactTitle: "📮 お問い合わせ",
+        contactLabel: "サポートメール：",
+        privacyTitle: "🔒 プライバシー",
+        privacyText: "SugarPaw は医療・ケアデータを公開ネットワークへアップロードしません。記録はご自身のアカウント内に安全に保存されます。",
+        aboutTitle: "💛 SugarPaw について",
+        aboutText: "SugarPaw は慢性疾患を持つ猫のためのケア記録アプリです。血糖、食事・飲水、体重、投薬、症状、日々のメモを管理し、獣医師向けにレポートを出力できます。",
+        faqTitle: "❓ よくある質問 / 使い方",
+        faq1_q: "Q1. 何を記録できますか？",
+        faq1_a: "血糖値、インスリン、食事と飲水、体重、検査結果、嘔吐や下痢などの異常記録、ケア日記を保存できます。",
+        faq2_q: "Q2. 家族や介助者を招待するには？",
+        faq2_a: "「共同照顧」ページで招待リンク／コードを作成し、相手がログイン後に開くと参加できます。",
+        faq3_q: "Q3. データは公開されますか？",
+        faq3_a: "いいえ。記録は自分のアカウント内にのみ保存され、他人は閲覧できません。",
+        faq4_q: "Q4. 獣医師に共有できますか？",
+        faq4_a: "はい。血糖曲線や日記、医療記録などを PNG / PDF 形式で書き出して共有できます。"
       }
+    };
 
-      document.querySelectorAll(".langbtn").forEach(btn => {
-        btn.addEventListener("click", () => setLang(btn.dataset.lang));
+    const buttons = document.querySelectorAll(".lang-btn");
+    const nodes = document.querySelectorAll("[data-i18n]");
+
+    function setLang(lang){
+      buttons.forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
+      nodes.forEach(n => {
+        const key = n.dataset.i18n;
+        n.textContent = i18n[lang][key] || i18n.zh[key] || "";
       });
-    </script>
+      document.documentElement.lang = lang === "zh" ? "zh-Hant" : lang;
+      document.body.classList.toggle("jp", lang === "ja");
+    }
+
+    buttons.forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+    setLang("zh");
+  </script>
+</body>
+</html>
+
   </body>
 </html>
 
