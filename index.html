@@ -5,18 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SugarPaw Support</title>
 
-  <!-- 基本 SEO -->
   <meta name="description" content="SugarPaw support and FAQ page." />
 
-  <!-- Favicon（用你 assets 裡的) -->
   <link rel="icon" href="assets/favicon-192.png" />
   <link rel="apple-touch-icon" href="assets/favicon-192.png" />
-
-  <!-- ✅ 如果你想換成更一致的字體，可以在這裡加 Google Font
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
-  -->
 
   <style>
     :root{
@@ -39,12 +31,6 @@
       margin:0;
       background: var(--bg);
       color: var(--text);
-
-      /* ✅ 字體就是改這行（你問的地方）
-         想更像 App，就把 system-ui 換成你喜歡的字體即可
-         例如：
-         font-family: "Noto Sans TC", system-ui, -apple-system, sans-serif;
-      */
       font-family: system-ui, -apple-system, "Noto Sans TC", "PingFang TC", "Hiragino Sans",
                    "Segoe UI", sans-serif;
     }
@@ -79,7 +65,6 @@
       line-height: 1.7;
     }
 
-    /* 語言切換 */
     .lang-switch{
       display:inline-flex;
       background:#f1e6d3;
@@ -104,7 +89,6 @@
       box-shadow: 0 0 0 2px var(--blue) inset;
     }
 
-    /* 卡片 */
     .card{
       background: var(--card);
       border-radius: var(--radius);
@@ -125,7 +109,6 @@
     }
     .muted{ color: var(--muted); }
 
-    /* FAQ */
     .faq{
       text-align:left;
       margin-top: 6px;
@@ -146,7 +129,6 @@
       line-height:1.8;
     }
 
-    /* ✅ Footer 改成 App 一致 */
     .footer{
       margin: 36px 0 18px;
       text-align: center;
@@ -158,14 +140,12 @@
     }
     .footer-line{ margin-top: 4px; }
 
-    /* ✅ 只在日文模式生效的斷行規則 */
     body.jp{
       word-break: keep-all;
       line-break: strict;
       letter-spacing: .2px;
     }
 
-    /* 小螢幕 */
     @media (max-width: 480px){
       h1{ font-size: 28px; }
       .card{ padding: 22px 16px; }
@@ -177,7 +157,6 @@
 <body>
   <div class="wrap">
 
-    <!-- ✅ 上方品牌圖 -->
     <div class="brand">
       <img src="assets/guardian_cat_0_0.png" alt="SugarPaw Guardian" />
       <div class="muted" style="font-weight:700; letter-spacing:.4px;">SugarPaw Guardian</div>
@@ -219,6 +198,15 @@
       </p>
     </section>
 
+    <!-- ✅ Pricing / Subscription -->
+    <section class="card">
+      <h2 data-i18n="pricingTitle">💎 收費與訂閱</h2>
+      <p data-i18n="pricingLine1">SugarPaw 基本功能免費使用。</p>
+      <p data-i18n="pricingLine2">Pro 訂閱可解鎖進階分析、完整匯出與更多照護工具。</p>
+      <p data-i18n="pricingLine3">價格：每月 NT$50 / 每年 NT$365（依 App Store 顯示為準）。</p>
+      <p class="muted" data-i18n="pricingLine4">你可以隨時於 iOS 設定中取消訂閱。</p>
+    </section>
+
     <!-- FAQ -->
     <section class="card faq">
       <h2 data-i18n="faqTitle">❓ 常見問題 / 使い方</h2>
@@ -250,9 +238,32 @@
           可以。在血糖曲線、日記、醫療紀錄等頁面可匯出 PNG / PDF，方便傳給獸醫或備存。
         </div>
       </div>
+
+      <!-- ✅ New FAQ 5 -->
+      <div class="faq-item">
+        <div class="faq-q" data-i18n="faq5_q">Q5. 資料可以跨裝置同步嗎？</div>
+        <div class="faq-a" data-i18n="faq5_a">
+          可以。只要使用同一帳號登入，資料會自動同步到你的裝置。
+        </div>
+      </div>
+
+      <!-- ✅ New FAQ 6 -->
+      <div class="faq-item">
+        <div class="faq-q" data-i18n="faq6_q">Q6. AI 分析會怎麼使用我的資料？</div>
+        <div class="faq-a" data-i18n="faq6_a">
+          AI 只會在你主動使用分析功能時讀取必要的紀錄，用於生成照護建議，不會公開或分享給其他人。
+        </div>
+      </div>
+
+      <!-- ✅ New FAQ 7 -->
+      <div class="faq-item">
+        <div class="faq-q" data-i18n="faq7_q">Q7. 要怎麼取消訂閱？</div>
+        <div class="faq-a" data-i18n="faq7_a">
+          你可以到 iPhone 的「設定 → Apple ID → 訂閱項目」中取消 SugarPaw Pro，取消後仍可使用免費功能。
+        </div>
+      </div>
     </section>
 
-    <!-- ✅ Footer（App 版） -->
     <footer class="footer">
       <div class="footer-line">© 2025 SugarPaw　Tâi-uân tsè-tsō 臺灣製造</div>
       <div class="footer-line">Made with ❤️ and 🐾</div>
@@ -271,6 +282,13 @@
         privacyText: "SugarPaw 不會將你的醫療或照護資料上傳到公開網路。所有記錄只會安全保存在你自己的帳號中。",
         aboutTitle: "💛 關於 SugarPaw",
         aboutText: "SugarPaw 是為慢性病貓咪設計的照護紀錄 app，協助你追蹤血糖、飲食、體重、用藥、症狀與日常心情筆記，並可匯出給獸醫參考。",
+
+        pricingTitle: "💎 收費與訂閱",
+        pricingLine1: "SugarPaw 基本功能免費使用。",
+        pricingLine2: "Pro 訂閱可解鎖進階分析、完整匯出與更多照護工具。",
+        pricingLine3: "價格：每月 NT$50 / 每年 NT$365（依 App Store 顯示為準）。",
+        pricingLine4: "你可以隨時於 iOS 設定中取消訂閱。",
+
         faqTitle: "❓ 常見問題 / 使い方",
         faq1_q: "Q1. SugarPaw 可以記錄哪些內容？",
         faq1_a: "你可以記錄血糖、胰島素、飲食與飲水、體重、醫療檢驗、異常觀察（嘔吐、軟便等）與照護日記。",
@@ -279,8 +297,16 @@
         faq3_q: "Q3. 我的資料會被公開嗎？",
         faq3_a: "不會。SugarPaw 僅在你的帳號中保存資料，並使用資料庫權限規則保護，其他人無法看到你的紀錄。",
         faq4_q: "Q4. 可以匯出給獸醫看嗎？",
-        faq4_a: "可以。在血糖曲線、日記、醫療記錄等頁面可匯出 PNG / PDF，方便傳給獸醫或備存。"
+        faq4_a: "可以。在血糖曲線、日記、醫療紀錄等頁面可匯出 PNG / PDF，方便傳給獸醫或備存。",
+
+        faq5_q: "Q5. 資料可以跨裝置同步嗎？",
+        faq5_a: "可以。只要使用同一帳號登入，資料會自動同步到你的裝置。",
+        faq6_q: "Q6. AI 分析會怎麼使用我的資料？",
+        faq6_a: "AI 只會在你主動使用分析功能時讀取必要的紀錄，用於生成照護建議，不會公開或分享給其他人。",
+        faq7_q: "Q7. 要怎麼取消訂閱？",
+        faq7_a: "你可以到 iPhone 的「設定 → Apple ID → 訂閱項目」中取消 SugarPaw Pro，取消後仍可使用免費功能。"
       },
+
       en: {
         title: "SugarPaw Support",
         subtitle: "If you encounter any issues, feel free to contact us anytime.",
@@ -290,6 +316,13 @@
         privacyText: "SugarPaw never uploads your medical or care data to public networks. All records are stored securely within your own account.",
         aboutTitle: "💛 About SugarPaw",
         aboutText: "SugarPaw is a care-tracking app for cats with chronic conditions. It helps you log glucose, meals, weight, medication, symptoms, and daily notes, and export reports for your vet.",
+
+        pricingTitle: "💎 Pricing & Subscription",
+        pricingLine1: "SugarPaw core features are free to use.",
+        pricingLine2: "Pro unlocks advanced insights, full exports, and more care tools.",
+        pricingLine3: "Price: NT$50/month or NT$365/year (final price shown in App Store).",
+        pricingLine4: "You can cancel anytime in your iOS subscription settings.",
+
         faqTitle: "❓ FAQ / How to Use",
         faq1_q: "Q1. What can I track in SugarPaw?",
         faq1_a: "You can log glucose, insulin, meals & water intake, weight, lab results, abnormal events (vomiting, diarrhea, etc.), and care diaries.",
@@ -298,8 +331,16 @@
         faq3_q: "Q3. Will my data be public?",
         faq3_a: "No. Your data is private to your account and protected by database security rules.",
         faq4_q: "Q4. Can I export data for my vet?",
-        faq4_a: "Yes. You can export PNG/PDF from charts, diaries, and medical records for easy sharing."
+        faq4_a: "Yes. You can export PNG/PDF from charts, diaries, and medical records for easy sharing.",
+
+        faq5_q: "Q5. Can I sync data across devices?",
+        faq5_a: "Yes. Sign in with the same account and your data will sync automatically.",
+        faq6_q: "Q6. How does AI analysis use my data?",
+        faq6_a: "AI reads only the necessary records when you trigger analysis, to generate care suggestions. It’s never made public or shared.",
+        faq7_q: "Q7. How do I cancel Pro?",
+        faq7_a: "Go to iPhone Settings → Apple ID → Subscriptions, cancel SugarPaw Pro anytime. Free features remain available."
       },
+
       ja: {
         title: "SugarPaw サポートページ",
         subtitle: "ご不明な点があれば、いつでもお気軽にご連絡ください。",
@@ -309,6 +350,13 @@
         privacyText: "SugarPaw は医療・ケアデータを公開ネットワークへアップロードしません。記録はご自身のアカウント内に安全に保存されます。",
         aboutTitle: "💛 SugarPaw について",
         aboutText: "SugarPaw は慢性疾患を持つ猫のためのケア記録アプリです。血糖、食事・飲水、体重、投薬、症状、日々のメモを管理し、獣医師向けにレポートを出力できます。",
+
+        pricingTitle: "💎 料金とサブスクリプション",
+        pricingLine1: "SugarPaw の基本機能は無料でご利用いただけます。",
+        pricingLine2: "Pro では高度な分析、完全な書き出し、追加のケア機能が利用できます。",
+        pricingLine3: "料金：月額 NT$50 / 年額 NT$365（最終価格は App Store 表示に従います）。",
+        pricingLine4: "iOS のサブスクリプション設定からいつでも解約できます。",
+
         faqTitle: "❓ よくある質問 / 使い方",
         faq1_q: "Q1. 何を記録できますか？",
         faq1_a: "血糖値、インスリン、食事と飲水、体重、検査結果、嘔吐や下痢などの異常記録、ケア日記を保存できます。",
@@ -317,7 +365,14 @@
         faq3_q: "Q3. データは公開されますか？",
         faq3_a: "いいえ。記録は自分のアカウント内にのみ保存され、他人は閲覧できません。",
         faq4_q: "Q4. 獣医師に共有できますか？",
-        faq4_a: "はい。血糖曲線や日記、医療記録などを PNG / PDF 形式で書き出して共有できます。"
+        faq4_a: "はい。血糖曲線や日記、医療記録などを PNG / PDF 形式で書き出して共有できます。",
+
+        faq5_q: "Q5. 複数端末で同期できますか？",
+        faq5_a: "はい。同じアカウントでログインすれば、自動で同期されます。",
+        faq6_q: "Q6. AI 分析はデータをどう使いますか？",
+        faq6_a: "分析を実行したときに必要な記録のみを読み取り、ケアの参考情報を生成します。公開・共有はされません。",
+        faq7_q: "Q7. Pro の解約方法は？",
+        faq7_a: "iPhone の「設定 → Apple ID → サブスクリプション」から SugarPaw Pro をいつでも解約できます。無料機能は引き続き使えます。"
       }
     };
 
@@ -331,8 +386,6 @@
         n.textContent = i18n[lang][key] || i18n.zh[key] || "";
       });
       document.documentElement.lang = lang === "zh" ? "zh-Hant" : lang;
-
-      // ✅ 日文模式才套日文換行規則
       document.body.classList.toggle("jp", lang === "ja");
     }
 
@@ -341,4 +394,3 @@
   </script>
 </body>
 </html>
-
