@@ -1,206 +1,116 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SugarPaw Support / 支援中心</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SugarPaw 支援頁 | Support</title>
   <style>
-    :root{
-      --bg:#fffdf8;
-      --ink:#1f2937;
-      --muted:#6b7280;
-      --brand:#f59e0b; /* 虎爺金橙 */
-      --brand-soft:#fff4db;
-      --card:#ffffff;
-      --line:#f2d9a6;
-      --radius:18px;
+    body {
+      background: #f8f5ef;
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: #4a2d20;
+      text-align: center;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,
-      "Noto Sans TC","Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji",sans-serif;
-      background:var(--bg); color:var(--ink);
-      line-height:1.65;
+    h1 { font-size: 28px; margin-top: 10px; }
+    h2 { margin-top: 40px; }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 600px;
+      margin: 20px auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    header{
-      padding:28px 20px 8px; text-align:center;
+    img.logo {
+      width: 160px;
+      margin: 20px auto;
+      display: block;
     }
-    .brand{
-      display:flex; align-items:center; justify-content:center; gap:10px;
-      font-weight:800; font-size:30px; letter-spacing:0.5px;
+    .lang-btn {
+      margin: 6px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: none;
+      background: #f3d49b;
+      cursor: pointer;
     }
-    .brand .paw{font-size:22px}
-    .tagline{color:var(--muted); margin-top:6px; font-size:15px}
-    .wrap{max-width:880px; margin:0 auto; padding:16px}
-    .lang{
-      display:flex; gap:8px; justify-content:center; flex-wrap:wrap;
-      margin:8px 0 18px;
-    }
-    .lang a{
-      text-decoration:none; padding:6px 10px; border-radius:999px;
-      border:1px solid var(--line); color:var(--ink); background:#fff;
-      font-size:13px;
-    }
-    .lang a:hover{border-color:var(--brand); color:var(--brand)}
-    .card{
-      background:var(--card);
-      border:2px solid var(--brand-soft);
-      border-radius:var(--radius);
-      box-shadow:0 6px 20px rgba(31,41,55,0.06);
-      padding:18px;
-      margin:12px 0;
-    }
-    h2{
-      margin:0 0 10px; font-size:20px; display:flex; align-items:center; gap:8px;
-    }
-    h3{margin:14px 0 8px; font-size:16px}
-    ul{margin:6px 0 0 18px}
-    .pill{
-      display:inline-block; background:var(--brand-soft); color:#9a5a00;
-      padding:3px 8px; border-radius:999px; font-size:12px; font-weight:600;
-      margin-left:6px;
-    }
-    .btn{
-      display:inline-block; padding:10px 14px; border-radius:12px; 
-      background:var(--brand); color:white; font-weight:700; text-decoration:none;
-      margin-top:6px;
-    }
-    .btn.secondary{
-      background:#fff; color:var(--brand); border:2px solid var(--brand);
-    }
-    .grid{
-      display:grid; grid-template-columns:1fr 1fr; gap:12px;
-    }
-    @media (max-width:720px){
-      .grid{grid-template-columns:1fr}
-    }
-    footer{
-      text-align:center; color:var(--muted); font-size:12px; padding:20px 6px 30px;
-    }
-    .hr{height:1px; background:#f3f4f6; margin:12px 0}
-    code{background:#f9fafb; padding:2px 6px; border-radius:6px}
   </style>
 </head>
 
 <body>
-<header>
-  <div class="brand">
-    <span>🐯</span>
-    <span>SugarPaw</span>
-    <span class="paw">🐾</span>
+
+  <img class="logo" src="guardian_cat_1_0.png">
+
+  <h1 id="title">SugarPaw 支援頁</h1>
+  <p id="subtitle">若您在使用中遇到任何問題，我們會盡快協助您。</p>
+
+  <div>
+    <button class="lang-btn" onclick="setLang('zh')">繁中</button>
+    <button class="lang-btn" onclick="setLang('en')">English</button>
+    <button class="lang-btn" onclick="setLang('ja')">日本語</button>
   </div>
-  <div class="tagline">一起守護貓咪的健康與幸福 ✨</div>
 
-  <div class="lang">
-    <a href="#zh">繁體中文</a>
-    <a href="#en">English</a>
-    <a href="#ja">日本語</a>
+  <div class="card">
+    <h2 id="sec1">📩 聯絡我們</h2>
+    <p id="contact">
+      如需協助，請來信：  
+      <br><b>looky.kao@gmail.com</b>
+    </p>
   </div>
-</header>
 
-<div class="wrap">
-
-  <!-- 繁中 -->
-  <section id="zh" class="card">
-    <h2>🐾 SugarPaw 支援中心 <span class="pill">繁體中文</span></h2>
-    <p>
-      SugarPaw 是一款給貓咪照護者使用的健康紀錄 App，支援血糖、飲食、胰島素、體重、醫療檢驗、
-      照護日記與異常觀察等功能。你可以用它整理每日照護流程，也能把記錄匯出給獸醫參考。
+  <div class="card">
+    <h2 id="sec2">🔒 隱私權</h2>
+    <p id="privacy">
+      SugarPaw 不會上傳您的個人醫療資料。
+      所有紀錄皆儲存在您自己的帳號與私人資料庫中。
     </p>
+  </div>
 
-    <h3>常見問題（FAQ）</h3>
-    <ul>
-      <li><b>Q：App 需要登入嗎？</b><br/>A：為了跨裝置同步與共照功能，需要登入（Email/Google/Apple）。</li>
-      <li><b>Q：如何切換不同貓咪？</b><br/>A：首頁上方可切換 activeCat，每隻貓有自己的資料。</li>
-      <li><b>Q：如何匯出 PDF / PNG？</b><br/>A：在血糖趨勢、綜合圖、醫療紀錄或日記頁面點右下角匯出按鈕即可。</li>
-      <li><b>Q：共照邀請怎麼用？</b><br/>A：到「共照管理」頁生成邀請連結，對方加入後即可一起照護同一隻貓。</li>
-    </ul>
-
-    <div class="hr"></div>
-
-    <h3>聯絡我們</h3>
-    <p>
-      若你有任何問題或 bug 回報，歡迎來信：<br/>
-      📮 <b>looky.kao@gmail.com</b>
+  <div class="card">
+    <h2 id="sec3">💛 關於 SugarPaw</h2>
+    <p id="about">
+      SugarPaw 是為慢性病貓咪照護者所打造的紀錄工具。
+      包含血糖、餵食、用藥、症狀與情緒追蹤。
     </p>
+  </div>
 
-    <h3>隱私權與資料安全</h3>
-    <p>
-      SugarPaw 只會在你同意下儲存你的照護紀錄，並以帳號權限限制資料範圍。
-      詳細請見隱私權政策頁（你之後可補上連結）。
-    </p>
-  </section>
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    title.innerText = "SugarPaw 支援頁";
+    subtitle.innerText = "若您在使用中遇到任何問題，我們會盡快協助您。";
+    sec1.innerText = "📩 聯絡我們";
+    contact.innerHTML = "如需協助，請來信：<br><b>looky.kao@gmail.com</b>";
+    sec2.innerText = "🔒 隱私權";
+    privacy.innerText = "SugarPaw 不會上傳您的個人醫療資料。所有紀錄皆儲存在您自己的帳號與私人資料庫中。";
+    sec3.innerText = "💛 關於 SugarPaw";
+    about.innerText = "SugarPaw 是為慢性病貓咪照護者所打造的紀錄工具。包含血糖、餵食、用藥、症狀與情緒追蹤。";
+  }
+  if (lang === 'en') {
+    title.innerText = "SugarPaw Support";
+    subtitle.innerText = "If you encounter issues, we are here to help.";
+    sec1.innerText = "📩 Contact Us";
+    contact.innerHTML = "Email support:<br><b>looky.kaop@gmail.com</b>";
+    sec2.innerText = "🔒 Privacy";
+    privacy.innerText = "SugarPaw never uploads your medical data. Records are stored securely in your own account.";
+    sec3.innerText = "💛 About SugarPaw";
+    about.innerText = "SugarPaw helps caregivers track glucose, feeding, medication, symptoms, and emotional notes.";
+  }
+  if (lang === 'ja') {
+    title.innerText = "SugarPaw サポートページ";
+    subtitle.innerText = "ご不明な点があれば、お気軽にご連絡ください。";
+    sec1.innerText = "📩 お問い合わせ";
+    contact.innerHTML = "サポートメール：<br><b>looky.kao@gmail.com</b>";
+    sec2.innerText = "🔒 プライバシー";
+    privacy.innerText = "SugarPaw は医療データをアップロードしません。すべての記録はご自身のアカウントに安全に保存されます。";
+    sec3.innerText = "💛 SugarPaw について";
+    about.innerText = "SugarPaw は慢性疾患を持つ猫のケア記録アプリです。血糖、食事、投薬、症状、日々のメモを管理できます。";
+  }
+}
+</script>
 
-  <!-- English -->
-  <section id="en" class="card">
-    <h2>🐾 SugarPaw Support <span class="pill">English</span></h2>
-    <p>
-      SugarPaw is a health-tracking app for cat caregivers.  
-      It helps you record blood glucose, meals, insulin, weight, lab results, care diaries,
-      and abnormal symptoms. You can also export reports for your vet.
-    </p>
-
-    <h3>FAQ</h3>
-    <ul>
-      <li><b>Q: Do I need an account?</b><br/>
-        A: Yes. Sign-in is required for syncing across devices and caregiver sharing.</li>
-      <li><b>Q: How do I switch cats?</b><br/>
-        A: Use the cat switcher on the dashboard to change your active cat.</li>
-      <li><b>Q: How to export PDF/PNG?</b><br/>
-        A: Tap the export buttons on Blood Sugar, Combined Charts, Medical Records, or Diary pages.</li>
-      <li><b>Q: How does caregiver sharing work?</b><br/>
-        A: Generate an invite link in “Caregiver Manage” and your family/vet assistants can join.</li>
-    </ul>
-
-    <div class="hr"></div>
-
-    <h3>Contact</h3>
-    <p>Email: <b>looky.kao@gmail.com</b> (replace with your own support email)</p>
-
-    <h3>Privacy</h3>
-    <p>
-      SugarPaw stores your records only with your consent and protects them with account-based access control.
-      A privacy policy link can be added here later.
-    </p>
-  </section>
-
-  <!-- 日本語 -->
-  <section id="ja" class="card">
-    <h2>🐾 SugarPaw サポート <span class="pill">日本語</span></h2>
-    <p>
-      SugarPaw は猫のケアをする人のための健康記録アプリです。  
-      血糖値、食事、インスリン、体重、検査結果、ケア日記、異常観察などをまとめて記録でき、
-      必要に応じて PDF / PNG で獣医師へ共有できます。
-    </p>
-
-    <h3>よくある質問（FAQ）</h3>
-    <ul>
-      <li><b>Q：ログインは必要ですか？</b><br/>
-        A：端末間同期と共同ケア機能のため、ログインが必要です。</li>
-      <li><b>Q：猫の切り替え方法は？</b><br/>
-        A：ホーム上部の猫選択（activeCat）から切り替えられます。</li>
-      <li><b>Q：PDF / PNG の出力は？</b><br/>
-        A：血糖トレンド、統合チャート、医療記録、日記ページの右下にある出力ボタンを押してください。</li>
-      <li><b>Q：共同ケア招待はどう使う？</b><br/>
-        A：「共同ケア管理」ページで招待リンクを作成し、相手が参加できます。</li>
-    </ul>
-
-    <div class="hr"></div>
-
-    <h3>お問い合わせ</h3>
-    <p>メール：<b>looky.kao@gmail.com</b>（あなたのサポート用メールに変更可）</p>
-
-    <h3>プライバシー</h3>
-    <p>
-      SugarPaw はユーザーの同意に基づき記録を保存し、アカウント権限で安全に管理します。
-      プライバシーポリシーのリンクは後から追加できます。
-    </p>
-  </section>
-
-</div>
-
-<footer>
-  © 2025 SugarPaw • Made with ❤️ and 🐾 in Taiwan
-</footer>
 </body>
 </html>
+
