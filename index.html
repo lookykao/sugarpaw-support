@@ -5,239 +5,273 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SugarPaw Support</title>
 
-    <!-- ✅ favicon（可選，但建議放） -->
-    <link rel="icon" href="./assets/favicon-1921.png" />
+    <!-- Favicon（可留你上傳的那張） -->
+    <link rel="icon" href="assets/favicon-192.png" />
 
     <style>
       :root {
-        --bg: #fbf7ef;
+        --bg: #fff8f3;
         --card: #ffffff;
-        --text: #3b2c23;
-        --muted: #6b5b52;
-        --brand: #f59e0b;
-        --accent: #ff6b6b;
-        --radius: 18px;
+        --ink: #3a2a1f;
+        --muted: #6b5a4a;
+        --accent: #f59e0b;
+        --accent-soft: #fde9c2;
+        --radius: 20px;
+        --shadow: 0 8px 24px rgba(0,0,0,.06);
       }
 
-      * { box-sizing: border-box; }
       body {
         margin: 0;
-        font-family: system-ui, -apple-system, "Noto Sans TC", "Noto Sans JP", sans-serif;
+        font-family: system-ui, -apple-system, "Noto Sans TC", "PingFang TC", sans-serif;
         background: var(--bg);
-        color: var(--text);
+        color: var(--ink);
       }
 
       .wrap {
-        max-width: 880px;
-        padding: 28px 18px 60px;
+        max-width: 760px;
         margin: 0 auto;
+        padding: 28px 18px 60px;
         text-align: center;
       }
 
-      /* ✅ 頁首圖：用正確相對路徑 */
-      .hero {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        margin-top: 8px;
-        margin-bottom: 12px;
-      }
-      .hero img {
-        width: 96px;
-        height: 96px;
+      /* Header */
+      .logo {
+        width: 84px;
+        height: 84px;
         object-fit: contain;
-        filter: drop-shadow(0 4px 10px rgba(0,0,0,.06));
+        margin: 6px auto 8px;
+        display: block;
       }
 
       h1 {
+        font-size: 30px;
         margin: 8px 0 6px;
-        font-size: 32px;
         font-weight: 800;
         letter-spacing: .5px;
       }
+
       .subtitle {
         color: var(--muted);
         font-size: 15px;
         margin-bottom: 14px;
       }
 
-      .lang-switch {
-        display: inline-flex;
+      /* Lang buttons */
+      .langbar {
+        display: flex;
+        justify-content: center;
         gap: 8px;
-        margin: 8px 0 22px;
-        padding: 6px;
-        background: rgba(255,255,255,.65);
-        border-radius: 999px;
+        margin: 12px 0 22px;
+        flex-wrap: wrap;
       }
-      .lang-btn {
-        border: 0;
+      .langbtn {
+        border: 2px solid transparent;
+        background: var(--accent-soft);
+        color: var(--ink);
         padding: 8px 14px;
         border-radius: 999px;
-        cursor: pointer;
-        background: #f3e3c1;
-        color: #3b2c23;
         font-weight: 700;
+        cursor: pointer;
+        transition: .15s;
         font-size: 14px;
-        transition: .15s ease;
       }
-      .lang-btn.active {
-        background: white;
-        outline: 2px solid #2f6fed;
+      .langbtn.active {
+        border-color: #2b6cff;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(43,108,255,.15);
       }
 
+      /* Cards */
       .card {
         background: var(--card);
         border-radius: var(--radius);
-        padding: 20px 18px;
-        margin: 14px auto;
-        box-shadow: 0 10px 30px rgba(30, 20, 10, .06);
+        box-shadow: var(--shadow);
+        padding: 22px 18px;
+        margin: 16px auto;
         text-align: center;
-        max-width: 760px;
       }
+
       .card h2 {
-        margin: 0 0 8px;
+        margin: 0 0 10px;
         font-size: 20px;
         font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
       }
-
-      /* ✅ 文字區：統一自然換行，不手動 <br> */
       .card p {
-        margin: 0 auto;
-        font-size: 15.5px;
-        line-height: 1.8;
-        color: var(--text);
-        max-width: 36em; /* 中文舒服的寬度 */
-        white-space: normal;
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--ink);
+        white-space: pre-line;
       }
 
-      /* ✅ 日文專用排版：更自然的換行與行距 */
-      .lang-ja .card p {
-        max-width: 32em;       /* 日文不要太寬 */
-        line-height: 1.95;     /* 日文行距稍大更順 */
-        line-break: strict;
-        word-break: keep-all; /* 避免亂拆英數 */
+      .email {
+        font-weight: 800;
+        font-size: 16px;
+        letter-spacing: .2px;
       }
 
-      .muted { color: var(--muted); }
+      /* Japanese typography fix */
+      .lang-ja p {
+        line-height: 1.9;
+        letter-spacing: .2px;
+        word-break: keep-all;      /* 不亂切英文/數字 */
+        line-break: strict;        /* 日文自然換行 */
+        overflow-wrap: break-word; /* 遇到超長字才換 */
+      }
 
-      .footer {
-        margin-top: 18px;
-        font-size: 12.5px;
+      /* small footer */
+      footer {
+        margin-top: 28px;
         color: var(--muted);
+        font-size: 12px;
       }
-      a { color: #2f6fed; text-decoration: none; font-weight: 700; }
-      a:hover { text-decoration: underline; }
+
+      /* little omamori */
+      .omamori {
+        width: 72px;
+        opacity: .9;
+        margin: 4px auto 0;
+        display: block;
+      }
     </style>
   </head>
 
   <body>
-    <main class="wrap" id="app">
+    <main class="wrap">
+      <!-- ✅ 修破圖：用 assets/icon-512x512.png -->
+      <img class="logo" src="assets/icon-512x512.png" alt="SugarPaw logo" />
 
-      <header class="hero">
-        <!-- ✅ 這裡就是破圖原因：請確保 assets 裡有此檔 -->
-        <img src="./assets/guardian_cat_1_0.png" alt="SugarPaw Guardian" />
-        <h1 id="title">SugarPaw 支援頁</h1>
-        <div class="subtitle" id="subtitle">
-          如果你有任何問題，歡迎隨時聯絡我。
-        </div>
+      <h1 id="title">SugarPaw 支援頁</h1>
+      <div class="subtitle" id="subtitle">如果你遇到任何問題，歡迎來信，我們會盡快協助。</div>
 
-        <div class="lang-switch">
-          <button class="lang-btn active" data-lang="zh">繁中</button>
-          <button class="lang-btn" data-lang="en">English</button>
-          <button class="lang-btn" data-lang="ja">日本語</button>
-        </div>
-      </header>
-
-      <section class="card">
-        <h2 id="contactTitle">📮 聯絡我們</h2>
-        <p id="contactText">
-          支援信箱：<strong>looky.kao@gmail.com</strong>
-        </p>
-      </section>
-
-      <section class="card">
-        <h2 id="privacyTitle">🔒 隱私</h2>
-        <p id="privacyText">
-          SugarPaw 不會將你的醫療或照護資料上傳到公開網路。所有記錄只會安全保存在你自己的帳號中。
-        </p>
-      </section>
-
-      <section class="card">
-        <h2 id="aboutTitle">💛 關於 SugarPaw</h2>
-        <p id="aboutText">
-          SugarPaw 是為慢性病貓咪設計的照護紀錄 app，協助你追蹤血糖、飲食、體重、用藥、症狀與日常心情筆記，並可匯出給獸醫參考。
-        </p>
-      </section>
-
-      <div class="footer" id="footer">
-        © 2025 SugarPaw / lookykao
+      <div class="langbar">
+        <button class="langbtn active" data-lang="zh">繁中</button>
+        <button class="langbtn" data-lang="en">English</button>
+        <button class="langbtn" data-lang="ja">日本語</button>
       </div>
+
+      <section class="card" id="card-contact">
+        <h2>📮 <span id="contact-title">聯絡我們</span></h2>
+        <p>
+          <span id="contact-label">支援信箱：</span>
+          <span class="email">looky.kao@gmail.com</span>
+        </p>
+      </section>
+
+      <section class="card" id="card-privacy">
+        <h2>🔐 <span id="privacy-title">隱私說明</span></h2>
+        <p id="privacy-text">
+SugarPaw 不會上傳你的醫療或照護資料。
+所有紀錄都只會儲存在你自己的帳號中，
+並依據權限安全存取。
+        </p>
+      </section>
+
+      <section class="card" id="card-about">
+        <h2>💛 <span id="about-title">關於 SugarPaw</span></h2>
+        <p id="about-text">
+SugarPaw 是慢性病貓咪的照護記錄 App，
+可追蹤血糖、餵食、投藥、體重、症狀與日記，
+幫助照護者更安心、更有方向。
+        </p>
+        <img class="omamori" src="assets/omamori01.png" alt="omamori" />
+      </section>
+
+      <footer>© SugarPaw / lookykao</footer>
     </main>
 
     <script>
-      const i18n = {
+      const COPY = {
         zh: {
-          title: "SugarPaw 支援頁",
-          subtitle: "如果你有任何問題，歡迎隨時聯絡我。",
-          contactTitle: "📮 聯絡我們",
-          contactText: "支援信箱：looky.kao@gmail.com",
-          privacyTitle: "🔒 隱私",
-          privacyText: "SugarPaw 不會將你的醫療或照護資料上傳到公開網路。所有記錄只會安全保存在你自己的帳號中。",
-          aboutTitle: "💛 關於 SugarPaw",
-          aboutText: "SugarPaw 是為慢性病貓咪設計的照護紀錄 app，協助你追蹤血糖、飲食、體重、用藥、症狀與日常心情筆記，並可匯出給獸醫參考。",
-          footer: "© 2025 SugarPaw / lookykao"
+          pageTitle: "SugarPaw 支援頁",
+          subtitle: "如果你遇到任何問題，歡迎來信，我們會盡快協助。",
+          contactTitle: "聯絡我們",
+          contactLabel: "支援信箱：",
+          privacyTitle: "隱私說明",
+          privacyText:
+`SugarPaw 不會上傳你的醫療或照護資料。
+所有紀錄都只會儲存在你自己的帳號中，
+並依據權限安全存取。`,
+          aboutTitle: "關於 SugarPaw",
+          aboutText:
+`SugarPaw 是慢性病貓咪的照護記錄 App，
+可追蹤血糖、餵食、投藥、體重、症狀與日記，
+幫助照護者更安心、更有方向。`,
         },
         en: {
-          title: "SugarPaw Support",
-          subtitle: "If you run into any issues, feel free to contact us anytime.",
-          contactTitle: "📮 Contact Us",
-          contactText: "Email support: looky.kao@gmail.com",
-          privacyTitle: "🔒 Privacy",
-          privacyText: "SugarPaw never uploads your medical or care data to the public internet. All records are stored securely in your own account.",
-          aboutTitle: "💛 About SugarPaw",
-          aboutText: "SugarPaw is a care-tracking app for cats with chronic conditions. Track glucose, meals, weight, medication, symptoms, and daily notes, and export reports for your vet.",
-          footer: "© 2025 SugarPaw / lookykao"
+          pageTitle: "SugarPaw Support",
+          subtitle: "If you encounter any issues, feel free to contact us anytime.",
+          contactTitle: "Contact Us",
+          contactLabel: "Email support:",
+          privacyTitle: "Privacy",
+          privacyText:
+`SugarPaw never uploads your medical or care data.
+All records are stored securely in your own account
+and accessed only with your permission.`,
+          aboutTitle: "About SugarPaw",
+          aboutText:
+`SugarPaw is a care-tracking app for cats with chronic conditions.
+Track glucose, meals, medication, weight, symptoms, and daily notes
+to make caregiving clearer and more reassuring.`,
         },
         ja: {
-          title: "SugarPaw サポートページ",
-          subtitle: "ご不明な点がありましたら、お気軽にご連絡ください。",
-          contactTitle: "📮 お問い合わせ",
-          contactText: "サポートメール：looky.kao@gmail.com",
-          privacyTitle: "🔒 プライバシー",
-          privacyText: "SugarPaw は医療・ケアデータを公開ネットワークへ送信しません。すべての記録はご自身のアカウント内に安全に保存されます。",
-          aboutTitle: "💛 SugarPaw について",
-          aboutText: "SugarPaw は慢性疾患のある猫のためのケア記録アプリです。血糖、食事、体重、投薬、症状、日々のメモをまとめて管理し、獣医師に共有するためのレポートとして書き出すこともできます。",
-          footer: "© 2025 SugarPaw / lookykao"
+          pageTitle: "SugarPaw サポートページ",
+          subtitle: "お困りのことがあれば、いつでもお気軽にご連絡ください。",
+          contactTitle: "お問い合わせ",
+          contactLabel: "サポートメール：",
+          privacyTitle: "プライバシー",
+          privacyText:
+`SugarPaw は医療・ケアデータを外部にアップロードしません。
+記録はご自身のアカウントに安全に保存され、
+権限に基づいて利用されます。`,
+          aboutTitle: "SugarPaw について",
+          aboutText:
+`SugarPaw は慢性疾患のある猫のためのケア記録アプリです。
+血糖、食事、投薬、体重、症状、日々のメモをまとめて管理し、
+飼い主さんの安心と判断をサポートします。`,
         }
       };
 
-      const app = document.getElementById("app");
-      const btns = document.querySelectorAll(".lang-btn");
+      const els = {
+        title: document.getElementById("title"),
+        subtitle: document.getElementById("subtitle"),
+        contactTitle: document.getElementById("contact-title"),
+        contactLabel: document.getElementById("contact-label"),
+        privacyTitle: document.getElementById("privacy-title"),
+        privacyText: document.getElementById("privacy-text"),
+        aboutTitle: document.getElementById("about-title"),
+        aboutText: document.getElementById("about-text"),
+        wrap: document.querySelector(".wrap"),
+      };
 
       function setLang(lang) {
-        // lang class for ja layout
-        app.classList.toggle("lang-ja", lang === "ja");
+        const c = COPY[lang];
+        els.title.textContent = c.pageTitle;
+        els.subtitle.textContent = c.subtitle;
+        els.contactTitle.textContent = c.contactTitle;
+        els.contactLabel.textContent = c.contactLabel;
+        els.privacyTitle.textContent = c.privacyTitle;
+        els.privacyText.textContent = c.privacyText;
+        els.aboutTitle.textContent = c.aboutTitle;
+        els.aboutText.textContent = c.aboutText;
 
-        const t = i18n[lang];
-        document.getElementById("title").textContent = t.title;
-        document.getElementById("subtitle").textContent = t.subtitle;
-        document.getElementById("contactTitle").textContent = t.contactTitle;
-        document.getElementById("contactText").innerHTML = t.contactText;
-        document.getElementById("privacyTitle").textContent = t.privacyTitle;
-        document.getElementById("privacyText").textContent = t.privacyText;
-        document.getElementById("aboutTitle").textContent = t.aboutTitle;
-        document.getElementById("aboutText").textContent = t.aboutText;
-        document.getElementById("footer").textContent = t.footer;
+        // typography class
+        els.wrap.classList.remove("lang-ja");
+        if (lang === "ja") els.wrap.classList.add("lang-ja");
 
-        btns.forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
+        document.querySelectorAll(".langbtn").forEach(b => {
+          b.classList.toggle("active", b.dataset.lang === lang);
+        });
       }
 
-      btns.forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+      document.querySelectorAll(".langbtn").forEach(btn => {
+        btn.addEventListener("click", () => setLang(btn.dataset.lang));
+      });
     </script>
   </body>
-</html>
-
-</body>
 </html>
 
